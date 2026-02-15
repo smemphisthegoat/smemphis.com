@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMEMPHIS · About</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            cursor: default;
+        }
+
+        a,
+        button,
+        .btn {
+            cursor: pointer;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: #0a0a0a;
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* PAGE LAYOUT */
+        .page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAV */
+        nav {
+            flex-shrink: 0;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cfcfcf;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            border-color: #333;
+            background: #111;
+            color: #fff;
+        }
+
+        /* MAIN (CENTER EVERYTHING) */
+        main {
+            flex: 1;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 40px 20px;
+        }
+
+        .about-wrap {
+            width: 100%;
+            max-width: 1000px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        p {
+            color: #cfcfcf;
+        }
+
+        .panel {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .about-photo img {
+            width: 100%;
+            border-radius: 14px;
+            border: 1px solid #222;
+            background: #0d0d0d;
+            display: block;
+        }
+
+        /* FOOTER LOCKED */
+        footer {
+            flex-shrink: 0;
+            text-align: center;
+            padding: 20px 20px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            main {
+                padding: 30px 20px;
+            }
+
+            .panel {
+                padding: 28px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- NAV -->
+        <nav>
+            <div class="nav-inner">
+                <a class="nav-logo" href="index.html">SMEMPHIS</a>
+
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="devices.html">Devices</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN -->
+        <main>
+            <div class="about-wrap">
+
+                <h2>About Me</h2>
+
+                <div class="panel">
+                    <div class="about-grid">
+
+                        <div class="about-text">
+                            <p>
+                                Hi, I'm Curtis! I'm an aspiring music producer, recording engineer, and Max for Live
+                                developer. I have
+                                knowledge in DAWs such as: Ableton Live, Pro Tools, and Logic Pro.
+                                <br><br>
+                                I’m especially interested in creating cool and experimental devices and music!
+                            </p>
+                        </div>
+
+                        <div class="about-photo">
+                            <img src="https://scontent-lhr6-2.cdninstagram.com/v/t51.82787-15/635969111_17864470188579207_6153549252958900154_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=MzgzMjIzMjY4OTg0ODI5Mzc3NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=pSdCU2qUoDEQ7kNvwG4srjn&_nc_oc=AdnbcfCZT594kCTEGERtVL-j3CWoaVdCUodA288rrJkgSBE7Ep5O5xZ1HAY9b9m9xtY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&_nc_gid=2zh8pfreDglsJRVI-hWFtA&oh=00_AftwED_wgN7Mib3N-VXkaepziuaye_zUvpUKUowP3V7q5A&oe=6997CB92"
+                                alt="Studio or developer photo">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            ©
+            <script>document.write(new Date().getFullYear())</script> SMEMPHIS
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

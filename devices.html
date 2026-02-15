@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMEMPHIS · Devices</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            cursor: default;
+        }
+
+        a,
+        button,
+        .btn {
+            cursor: pointer;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: #0a0a0a;
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* PAGE LAYOUT */
+        .page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAV */
+        nav {
+            flex-shrink: 0;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cfcfcf;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            border-color: #333;
+            background: #111;
+            color: #fff;
+        }
+
+        /* MAIN (CENTER LIKE ABOUT) */
+        main {
+            flex: 1;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 40px 20px;
+        }
+
+        .devices-wrap {
+            width: 100%;
+            max-width: 1000px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        p {
+            color: #cfcfcf;
+        }
+
+        /* PANEL (MATCH ABOUT PAGE) */
+        .panel {
+            border-radius: 20px;
+            padding: 20px;
+
+            width: 100%;
+            max-width: 900px;
+
+            /* IMPORTANT: this gives room for hover scale */
+            overflow: visible;
+        }
+
+        /* INTERNAL SCROLL AREA */
+        .devices-scroll {
+            height: 55vh;
+            overflow-y: auto;
+
+            /* breathing room so hover doesn't clip */
+            padding: 20px 14px;
+
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            overflow-x: visible;
+        }
+
+        .devices-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* GRID */
+        .devices-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+
+            justify-items: center;
+
+            overflow: visible;
+        }
+
+        .device-card {
+            width: 100%;
+            max-width: 340px;
+
+            background: #0d0d0d;
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 20px;
+
+            transition: transform 0.2s ease, border 0.2s ease;
+            transform-origin: center;
+        }
+
+        .device-card:hover {
+            transform: scale(1.04);
+            border-color: #444;
+        }
+
+        .device-img img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            display: block;
+            border: 1px solid #222;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER LOCKED */
+        footer {
+            flex-shrink: 0;
+            text-align: center;
+            padding: 20px 20px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            main {
+                padding: 30px 20px;
+            }
+
+            .panel {
+                padding: 14px;
+            }
+
+            .devices-scroll {
+                height: 60vh;
+                padding: 18px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- NAV -->
+        <nav>
+            <div class="nav-inner">
+                <a class="nav-logo" href="index.html">SMEMPHIS</a>
+
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="devices.html">Devices</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN -->
+        <main>
+            <div class="devices-wrap">
+
+                <h2>Max for Live Devices</h2>
+
+                <div class="panel">
+                    <div class="devices-scroll">
+                        <div class="devices-grid">
+
+                            <div class="device-card">
+                                <div class="device-img">
+                                    <img src="https://scontent-lhr6-1.cdninstagram.com/v/t51.82787-15/619116999_17860696266579207_6252679018263503092_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzgxMjkyNDcxOTcwMDQyMjA4NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjk5MHg5OTAuc2RyLkMzIn0%3D&_nc_ohc=lyfqHITJQicQ7kNvwFJAtTX&_nc_oc=AdmBdl6Rzya2pJaezHb-61sn8bUdRCuv9bwNi0EX_CjBTi6lbaUW5m3EM2Os31_-xrY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&_nc_gid=2zh8pfreDglsJRVI-hWFtA&oh=00_AfsKCyQdczqzsFxAvsFrNUfKWrCDkNuGlAidLINu4KThdQ&oe=6997F152"
+                                        alt="Simple Feedback Delay device screenshot">
+                                </div>
+                                <h3>Simple Feedback Delay</h3>
+                                <p>Minimal feedback delay with controllable tone and stability for live performance.</p>
+                            </div>
+
+                            <div class="device-card">
+                                <div class="device-img">
+                                    <img src="https://scontent-lhr8-2.cdninstagram.com/v/t51.82787-15/619874747_17861389605579207_8801574667765585359_n.jpg?stp=dst-jpg_e35_p720x720_tt6&_nc_cat=103&ig_cache_key=MzgxNjUxNTM3MTQwNzI2ODc0NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEyMTR4MTM3MC5zZHIuQzMifQ%3D%3D&_nc_ohc=dG4Yp_o-8-sQ7kNvwGOBLUF&_nc_oc=AdmpfxvF0ii3LkF4uv4uzyc85m-SWWNLBxxfrZyNDQB40t8hhaPoD54PxmyxssWnmJU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lhr8-2.cdninstagram.com&_nc_gid=2zh8pfreDglsJRVI-hWFtA&oh=00_AfvJlr9u9MKTmFQFvZJVNqiVqSbNFSIRL2WqP3ogD3AZHA&oe=6997CF73"
+                                        alt="Simple Distortion Device screenshot">
+                                </div>
+                                <h3>Simple Distortion Device</h3>
+                                <p>Experimental Max for Live device focused on modulation and signal flow exploration.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            ©
+            <script>document.write(new Date().getFullYear())</script> SMEMPHIS
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
